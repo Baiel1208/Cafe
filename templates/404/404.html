@@ -1,0 +1,35 @@
+{% extends 'include/homepage.html' %}
+{%load static%}
+{%block content%}
+	<!-- TOP BAR -->
+	{% include 'include/header.html' %}
+	<!-- HEADER END -->
+
+	<!-- 404 PAGE -->
+	<section class="page-404">
+	    <div class="container">
+	        <div class="center">
+	            <img src="{% static 'images/404-img.png' %}" alt="">
+	            <h1>PAGE NOT FOUND</h1>
+	            <p class="error-text">The page you are looking for was moved, removed,<br>renamed or might never existed.</p>
+	            <div class="row">
+	            	<div class="col-md-4 col-md-offset-4">
+	            		<form role="search" method="get" class="wp-searchform">
+							<div class="input-div">
+								<input name="s" value="" placeholder="What are you looking for..." type="text">
+								<input type="submit" value="SEARCH">
+							</div>
+						</form>	
+	            	</div>
+	            </div>
+	            <a class="btn btn-bordered" href="/">Home Page</a> 
+            </div>
+	    </div>
+	</section>
+	<!-- 404 PAGE END -->
+
+	<!-- SUBSCRIBE FORM -->
+	{% include 'include/footer.html' %}
+	<!-- FOOTER END -->
+
+	{% endblock %}

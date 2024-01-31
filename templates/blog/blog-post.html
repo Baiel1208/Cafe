@@ -1,0 +1,204 @@
+{% extends 'include/homepage.html' %}
+{%load static%}
+{%block content%}
+
+
+	<!-- HEADER -->
+	{% include 'include/header.html' %}
+	<!-- HEADER END -->
+
+	<!-- PAGE HEAD -->
+	<section class="page-head">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="breadcrumb">
+						<li><a href="{% url 'index' %}">Главная</a></li>
+						<li><a href="{% url 'blog' %}">Более подробно</a></li>
+						<li>Блог</li>
+					</ul>
+					<h1>Блог</h1>	
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- PAGE HEAD END -->
+
+	<!-- BLOG SINGLE POST -->
+	<section class="blog-list">
+		<div class="blog-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="blog-post text-page">
+							<div class="img-wrap"><img class="img-responsive" src="{{ blog.image.url }}" alt=""></div>
+							<div class="item-info">
+								<div class="date"><i class="fa fa-clock-o" aria-hidden="true"></i>January 2, 2017</div>
+								<div class="like"><i class="fa fa-heart" aria-hidden="true"></i>12</div>
+								<div class="comm"><i class="fa fa-commenting" aria-hidden="true"></i>3</div>
+							</div>
+							<p>{{ blog.descriptions }}</p>
+							<blockquote>{{ blog.interesting_text }}</blockquote>
+							<p>{{ blog.text }}</p>
+							<div id="comments" class="comments-area">	
+							    <h3 class="comments-form-title">Связаться с нами</h3>
+							    <div class="comments-form-wrap">
+							        <a class="anchor" id="comments-form"></a>
+							        <div class="comments-form anchor">
+							            <div id="respond" class="comment-respond">
+							                <form method="post" id="commentform" class="comment-form form" novalidate="">
+												{% csrf_token %}
+							                    <label for="comment" class="required">Ваше Сообщение</label>
+							                    <textarea id="comment" name="comment" placeholder="Сообщение" aria-required="true"></textarea>
+							                    <div class="row">
+							                        <div class="comments-field comments_author col-sm-6">
+							                            <label for="author" class="required">Имя</label>
+							                            <input id="author" name="author" placeholder="Имя *" value="" size="30" aria-required="true" type="text">
+							                        </div>
+							                        <div class="comments-field comments_email col-sm-6">
+							                            <label for="email" class="required">Почта</label>
+							                            <input id="email" name="email" placeholder="Почта *" value="" size="30" aria-required="true" type="text">
+							                        </div>
+							                    </div>
+							                    <input name="submit" id="send_comment" class="submit aligncenter btn btn-brown" value="Отправить Сообщение" type="submit">
+							                </form>
+							            </div>
+							        </div>
+							    </div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="widget-area" role="complementary">
+						    <aside class="widget">
+						        <h4>Категория</h4>
+						        <ul>
+						            <li class="current-cat"><a href="#">Coffee Market</a>
+						            </li>
+						            <li><a href="#">100% Arabica</a>
+						            </li>
+						            <li><a href="#">Columbian Coffee</a>
+						            </li>
+						            <li><a href="#">Espresso</a>
+						            </li>
+						            <li><a href="#">Aroma Bar</a>
+						            </li>
+						            <li><a href="#">Coffee Shop</a>
+						            </li>
+						        </ul>
+						    </aside>
+						    <aside class="widget widget_calendar">
+						        <h4>Календарь</h4>
+						        <div id="calendar_wrap" class="calendar_wrap">
+						            <table id="wp-calendar">
+						                <caption>April 2017</caption>
+						                <thead>
+						                    <tr>
+						                        <th scope="col" title="Monday">M</th>
+						                        <th scope="col" title="Tuesday">T</th>
+						                        <th scope="col" title="Wednesday">W</th>
+						                        <th scope="col" title="Thursday">T</th>
+						                        <th scope="col" title="Friday">F</th>
+						                        <th scope="col" title="Saturday">S</th>
+						                        <th scope="col" title="Sunday">S</th>
+						                    </tr>
+						                </thead>
+
+						                
+
+						                <tbody>
+						                    <tr>
+						                        <td colspan="5" class="pad">&nbsp;</td>
+						                        <td>1</td>
+						                        <td>2</td>
+						                    </tr>
+						                    <tr>
+						                        <td>3</td>
+						                        <td id="today">4</td>
+						                        <td>5</td>
+						                        <td>6</td>
+						                        <td>7</td>
+						                        <td>8</td>
+						                        <td>9</td>
+						                    </tr>
+						                    <tr>
+						                        <td>10</td>
+						                        <td>11</td>
+						                        <td>12</td>
+						                        <td>13</td>
+						                        <td>14</td>
+						                        <td>15</td>
+						                        <td>16</td>
+						                    </tr>
+						                    <tr>
+						                        <td>17</td>
+						                        <td>18</td>
+						                        <td>19</td>
+						                        <td>20</td>
+						                        <td>21</td>
+						                        <td>22</td>
+						                        <td>23</td>
+						                    </tr>
+						                    <tr>
+						                        <td>24</td>
+						                        <td>25</td>
+						                        <td>26</td>
+						                        <td>27</td>
+						                        <td>28</td>
+						                        <td>29</td>
+						                        <td>30</td>
+						                    </tr>
+						                </tbody>
+						                <tfoot>
+						                    <tr>
+												<td colspan="4" id="prev"><a href="#">« Mar 2017</a></td>
+												
+												<td colspan="3" id="next" class="pad">&nbsp;</td>
+											</tr>
+						                </tfoot>
+						            </table>
+						        </div>
+						    </aside>
+						    <aside class="widget">
+						        <h4>Поиск</h4>
+						        <div class="content">
+						            <form class="form wp-searchform" method="get">
+						                <input name="search" value="" placeholder="Search for..." type="text">
+						                <button type="submit" class="fa fa-search"></button>
+						            </form>
+						        </div>
+						    </aside>
+						    <aside class="widget">
+						        <h4>Галерия</h4>
+						        <div class="content">
+						            <div class="gallery-small row">
+						                <a href="#" class="swipebox col-lg-4 col-md-4 col-sm-6 col-xs-6"><img class="img-responsive" src="{% static 'images/insta-1.jpg' %}" alt="Gallery">
+						                </a>
+						                <a href="#" class="swipebox col-lg-4 col-md-4 col-sm-6 col-xs-6"><img class="img-responsive" src="{% static 'images/insta-2.jpg' %}" alt="Gallery">
+						                </a>
+						                <a href="#" class="swipebox col-lg-4 col-md-4 col-sm-6 col-xs-6"><img class="img-responsive" src="{% static 'images/insta-3.jpg' %}" alt="Gallery">
+						                </a>
+						                <a href="#" class="swipebox col-lg-4 col-md-4 col-sm-6 col-xs-6"><img class="img-responsive" src="{% static 'images/insta-4.jpg' %}" alt="Gallery">
+						                </a>
+						                <a href="#" class="swipebox col-lg-4 col-md-4 col-sm-6 col-xs-6"><img class="img-responsive" src="{% static 'images/insta-5.jpg' %}" alt="Gallery">
+						                </a>
+						                <a href="#" class="swipebox col-lg-4 col-md-4 col-sm-6 col-xs-6"><img class="img-responsive" src="{% static 'images/insta-6.jpg' %}" alt="Gallery">
+						                </a>
+						            </div>
+						        </div>
+						    </aside>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- BLOG SINGLE POST END -->
+
+	<!-- SUBSCRIBE FORM -->
+
+	{% include 'include/footer.html' %}
+	<!-- FOOTER END -->
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'include/homepage.html' %}
+{%load static%}
+{%block content%}
+	<!-- TOP BAR -->
+	{% include 'include/header.html' %}
+	<!-- HEADER END -->
+	<!-- HEADER END -->
+
+	<!-- PAGE HEAD -->
+		<section class="page-head">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<ul class="breadcrumb">
+							<li><a href="{% url 'index' %}">Home</a></li>
+							<li>Gallery 3 columns</li>
+						</ul>
+						<h1>Gallery 3 columns</h1>	
+					</div>
+				</div>
+			</div>
+		</section>
+	<!-- PAGE HEAD END -->
+
+	<!-- GALLERY -->
+	<section class="gallery-wrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<a href="{% static 'images/0.jpg' %}" class="gallery-item swipebox"><img class="img-responsive" src="{% static 'images/0.jpg' %}" alt=""></a>
+				</div>
+				<div class="col-md-4">
+					<a href="{% static 'images/1.jpg' %}" class="gallery-item swipebox"><img class="img-responsive" src="{% static 'images/1.jpg' %}" alt=""></a>
+				</div>
+				<div class="col-md-4">
+					<a href="{% static 'images/2.jpg' %}" class="gallery-item swipebox"><img class="img-responsive" src="{% static 'images/2.jpg' %}" alt=""></a>
+				</div>
+				<div class="col-md-4">
+					<a href="{% static 'images/3.jpg' %}" class="gallery-item swipebox"><img class="img-responsive" src="{% static 'images/3.jpg' %}" alt=""></a>
+				</div>
+				<div class="col-md-4">
+					<a href="{% static 'images/4.jpg' %}" class="gallery-item swipebox"><img class="img-responsive" src="{% static 'images/4.jpg' %}" alt=""></a>
+				</div>
+				<div class="col-md-4">
+					<a href="{% static 'images/5.jpg' %}" class="gallery-item swipebox"><img class="img-responsive" src="{% static 'images/5.jpg' %}" alt=""></a>
+				</div>
+				<div class="col-md-4">
+					<a href="{% static 'images/6.jpg' %}" class="gallery-item swipebox"><img class="img-responsive" src="{% static 'images/6.jpg' %}" alt=""></a>
+				</div>
+				<div class="col-md-4">
+					<a href="{% static 'images/11.jpg' %}" class="gallery-item swipebox"><img class="img-responsive" src="{% static 'images/11.jpg' %}" alt=""></a>
+				</div>
+				<div class="col-md-4">
+					<a href="{% static 'images/12.jpg' %}" class="gallery-item swipebox"><img class="img-responsive" src="{% static 'images/12.jpg' %}" alt=""></a>
+				</div>
+				<div class="col-md-12">
+					<div class="paging-navigation">
+					    <hr>
+					    <div class="pagination">
+					        <a href="#" class="prev disabled"><i class="fa fa-chevron-left" aria-hidden="true"></i> Prev</a>
+					        <a href="#" class="page-numbers current">1</a>
+					        <a href="#" class="page-numbers">2</a>
+					        <a href="#" class="page-numbers">3</a>
+					        <a href="#" class="page-numbers">4</a>
+					        <a href="#" class="next">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+	<!-- GALLERY END -->
+
+	<!-- SUBSCRIBE FORM -->
+
+	{% include 'include/footer.html' %}
+	<!-- FOOTER END -->
+
+<!-- JAVASCRIPT FILES -->
+{% endblock %}

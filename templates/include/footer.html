@@ -1,0 +1,71 @@
+{% load static %}
+<section class="subscribe">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="inner">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="top-title">Хотите узнать о новых видах кофе?</div>
+                            <div class="bottom-title">Регистрация</div>
+                        </div>
+                        <div class="col-lg-5 col-md-6">
+                            <form class="subs-form">
+                                <input type="text" placeholder="электронной почты">
+                                <input type="submit" value="Отправить">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 col-sm-6">
+                    <a href="#" class="footer-logo"><img src="{% static 'images/footer-logo.png' %}" alt=""></a>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="footer-about">
+                        <div class="title">О Mr.Coffee</div>
+                        <p>Sed sagittis sodales lobortis. Курабитур в Элифенде<br> turpis, id vehicula odio. Донец
+                            pulvinar tellus<br> eget magna aliquet ultricies. </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <ul class="footer-contacts">
+                        <li><i class="fa fa-phone" aria-hidden="true"></i>+996 777 111 222</li>
+                        <li><i class="fa fa-envelope-o" aria-hidden="true"></i>ms_coffee@gmail.com</li>
+                        <li><i class="fa-brands fa-skype" aria-hidden="true"></i>mrcoffee</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-social">
+                        <div class="title">Подписывайтесь на нас</div>
+                        <ul class="social">
+                            <li><a href="#"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="copyrights"><a href="{% url 'index' %}">
+                        Просто-темы
+                        </a> 2017 &copy; Все права защищены <br> Условия эксплуатации</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

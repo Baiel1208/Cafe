@@ -1,0 +1,142 @@
+{% extends 'include/homepage.html' %}
+{%load static%}
+{%block content%}
+	<!-- TOP BAR -->
+	{% include 'include/header.html' %}
+	<!-- HEADER END -->
+
+	<!-- PAGE HEAD -->
+		<section class="page-head">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<ul class="breadcrumb">
+							<li><a href="{% url 'index' %}">Главная</a></li>
+							<li>Где купить</li>
+						</ul>
+						<h1>Где купить</h1>	
+					</div>
+				</div>
+			</div>
+		</section>
+	<!-- PAGE HEAD END -->
+
+	<!-- WHERE TO BUY -->
+	<section class="where-buy alt">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12"><h2>Наши Локация</h2></div>
+				<div class="col-md-12">
+					<div class="tab-content">
+						<!-- TabPanel -->
+						<div role="tabpanel" class="tab-pane fade in active" id="usa">
+							<div class="row">
+								<div class="col-md-4 col-sm-4">
+									<div class="buy-item">
+										<div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+										<div class="info">
+											<address>481 Goodisson str. 60544 New York City - MisterCoffee</address>	
+											<div class="phone"><i class="fa fa-phone" aria-hidden="true"></i>+80 (041) 2824 504 43</div>
+											<a href="mailto:orders@mistercoffee.us" class="mail"><i class="fa fa-envelope-o" aria-hidden="true"></i>orders@mistercoffee.us</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="buy-item">
+										<div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+										<div class="info">
+											<address>3 Big Avenue 1422 Seattle</address>	
+											<div class="phone"><i class="fa fa-phone" aria-hidden="true"></i>+80 (041) 2824 504 43</div>
+											<a href="mailto:orders@mistercoffee.us" class="mail"><i class="fa fa-envelope-o" aria-hidden="true"></i>orders@mistercoffee.us</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="buy-item">
+										<div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+										<div class="info">
+											<address>481 Goodisson str. 17790-60544 Washington</address>	
+											<div class="phone"><i class="fa fa-phone" aria-hidden="true"></i>+80 (041) 2824 504 43</div>
+											<a href="mailto:orders@mistercoffee.us" class="mail"><i class="fa fa-envelope-o" aria-hidden="true"></i>orders@mistercoffee.us</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4 col-sm-4">
+									<div class="buy-item">
+										<div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+										<div class="info">
+											<address>3 Big Avenue 1422 Seattle</address>	
+											<div class="phone"><i class="fa fa-phone" aria-hidden="true"></i>+80 (041) 2824 504 43</div>
+											<a href="mailto:orders@mistercoffee.us" class="mail"><i class="fa fa-envelope-o" aria-hidden="true"></i>orders@mistercoffee.us</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="buy-item">
+										<div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+										<div class="info">
+											<address>481 Goodisson str. 60544 New York City - MisterCoffee</address>	
+											<div class="phone"><i class="fa fa-phone" aria-hidden="true"></i>+80 (041) 2824 504 43</div>
+											<a href="mailto:orders@mistercoffee.us" class="mail"><i class="fa fa-envelope-o" aria-hidden="true"></i>orders@mistercoffee.us</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="buy-item">
+										<div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+										<div class="info">
+											<address>481 Goodisson str. 17790-60544 Washington</address>	
+											<div class="phone"><i class="fa fa-phone" aria-hidden="true"></i>+80 (041) 2824 504 43</div>
+											<a href="mailto:orders@mistercoffee.us" class="mail"><i class="fa fa-envelope-o" aria-hidden="true"></i>orders@mistercoffee.us</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- TabPanel -->
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- WHERE TO BUY END -->
+
+	<!-- ABOUT MARKET -->
+	<section class="about-market alt">
+		<div class="container">
+			<div class="row">
+				{% for static in static_all %}
+				<div class="col-md-4">
+					<div class="item">
+						<div class="icon">
+							{% if static.icon == "Бесплатная доставка" %}
+							<i class="fa fa-coffee" aria-hidden="true"></i>
+							{% endif %}
+							{% if static.icon == "Высококачественный продукт" %}
+							<i class="fa fa-plane" aria-hidden="true"></i>
+							{% endif %}
+							{% if static.icon == "100% натуральный кофе" %}
+							<i class="fa fa-check-circle" aria-hidden="true"></i>
+							{% endif %}
+				</div>
+						<div class="text">
+							<div class="title">{{ static.title }}</div>
+							<p>{{ static.context }}</p>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+	<!-- ABOUT MARKET END -->
+
+	<!-- SUBSCRIBE FORM -->
+	{% include 'include/footer.html' %}
+	<!-- FOOTER END -->
+
+<!-- JAVASCRIPT FILES -->
+{% endblock %}
