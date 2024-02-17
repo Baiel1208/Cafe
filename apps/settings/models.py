@@ -1,5 +1,7 @@
 from django.db import models
+
 from apps.settings.contacnts import ICONS
+
 
 # Create your models here.
 class Settings(models.Model):

@@ -1,9 +1,8 @@
-from django.shortcuts import render
-
+from django.conf import settings
 # Create your views here.
 from django.shortcuts import render
-from django.conf import settings
 from telebot import TeleBot, types
+
 from .models import TelegramUser
 
 # Create your views here.

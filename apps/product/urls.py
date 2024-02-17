@@ -1,5 +1,6 @@
 from django.urls import path
-from apps.product.views import product_search, shop, product, cart, checkout
+
+from apps.product.views import cart, checkout, product, product_search, shop
 
 urlpatterns = [
     path("shop", shop, name='shop'),

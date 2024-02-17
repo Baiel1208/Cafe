@@ -1,8 +1,11 @@
-from django.shortcuts import render, redirect
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from . import models as m
-from apps.telegram.views import get_text
 from django.core.mail import send_mail
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.shortcuts import redirect, render
+
+from apps.telegram.views import get_text
+
+from . import models as m
+
 
 # Create your views here.
 def index(request):

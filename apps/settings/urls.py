@@ -1,6 +1,7 @@
-from django.urls import  path
+from django.urls import path
 
-from  apps.settings.views import  index, about, coming, gallery, contact_view, where, blog, blog_post
+from apps.settings.views import (about, blog, blog_post, coming, contact_view,
+                                 gallery, index, where)
 
 urlpatterns = [
     path("", index, name="index"),

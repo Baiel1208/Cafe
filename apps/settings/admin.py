@@ -1,5 +1,7 @@
 from django.contrib import admin
+
 from . import models
+
 
 class AboutInline(admin.TabularInline):
     model = models.About

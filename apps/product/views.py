@@ -1,4 +1,5 @@
 from django.shortcuts import render
+
 from apps.settings.models import Product
 
 from .forms import ProductSearchForm
