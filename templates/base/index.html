@@ -16,7 +16,7 @@
             				<div class="top-title"><span>Добро пожаловать в </span>MISTER Coffee</div>
 		                	<div class="big-title">{{ setting_id.title }}</div>
 		                	<p>{{ setting_id.context }}</p>	
-		                	<a href="#" class="btn btn-default">Читать далее</a>
+		                	<a href="{% url "about" %}" class="btn btn-default">Читать далее</a>
             			</div>
             		</div>
             	</div>
@@ -135,7 +135,7 @@
 							<a href="#" class="name">{{ product.title  }}</a>
 							<div class="text">{{ product.context }}</div>
 							<div class="price">${{ product.price }}</div>
-							<a class="btn btn-default"><i class="fa fa-shopping-cart" aria-hidden="true"> Добавить в корзинуч1 </i>{{ interesting.cart }}</a>
+							<a class="btn btn-default"><i class="fa fa-shopping-cart" aria-hidden="true"> Добавить в корзину </i>{{ interesting.cart }}</a>
 						</div>
 						{% endfor %}
 					</div>

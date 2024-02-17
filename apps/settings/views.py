@@ -1,22 +1,23 @@
 from django.shortcuts import render, redirect
-from . import models
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from . import models as m
 from apps.telegram.views import get_text
 from django.core.mail import send_mail
 
 # Create your views here.
 def index(request):
-    setting_id = models.Settings.objects.latest('id')
-    static_all = models.About.objects.all().order_by("?")[:3]
-    static = models.Stati.objects.all().order_by()
-    product_all = models.Product.objects.all()
-    interesting = models.Interesting.objects.all()
+    setting_id = m.Settings.objects.latest('id')
+    static_all = m.About.objects.all().order_by("?")[:3]
+    static = m.Stati.objects.all().order_by()
+    product_all = m.Product.objects.all()
+    interesting = m.Interesting.objects.all()
     return render(request, "base/index.html", locals())
 
 
 def about(request):
-    about_id = models.AboutMain.objects.latest('id')
-    static = models.Stati.objects.all()
-    static_all = models.About.objects.all().order_by("?")[:3]
+    about_id = m.AboutMain.objects.latest('id')
+    static = m.Stati.objects.all()
+    static_all = m.About.objects.all().order_by("?")[:3]
     return render(request, "base/about.html", locals())
 
 
@@ -24,8 +25,23 @@ def coming(request):
     return render(request, "base/coming-soon-full.html", locals())
 
 
-def gellary(request):
-    return render(request, "base/gallery.html", locals())
+def gallery(request):
+    # Assuming YourModel is the model you want to paginate
+    queryset = m.Product.objects.all()
+
+    paginator = Paginator(queryset, 3)  # Show 10 items per page
+
+    page = request.GET.get('page')
+    try:
+        paginated_queryset = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        paginated_queryset = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        paginated_queryset = paginator.page(paginator.num_pages)
+
+    return render(request, "base/gallery.html", {'paginated_queryset': paginated_queryset})
 
 
 # добавоение талаграм бота
@@ -35,7 +51,7 @@ def contact_view(request):
         text = request.POST.get('text')
         email = request.POST.get('email')
         if message:
-            models.Сontacts.objects.create(message=message, text=text, email=email)
+            m.Сontacts.objects.create(message=message, text=text, email=email)
 
         get_text(f""" Оставлен отзыв 
                 Имя пользователя: {message}
@@ -47,7 +63,7 @@ def contact_view(request):
 
 
 def where(request):
-    static_all = models.About.objects.all()
+    static_all = m.About.objects.all()
     return render(request, "base/where.html", locals())
 
 
@@ -57,12 +73,12 @@ def blog(request):
 
 # форма обратного связи
 def blog_post(request):
-    blog = models.Blog.objects.latest('id')
+    blog = m.Blog.objects.latest('id')
     if request.method =="POST":
         email = request.POST.get('email')
         message = request.POST.get('comment')
         name = request.POST.get('author')
-        models.Сontacts.objects.create(email=email, message=message, name=name)
+        m.Сontacts.objects.create(email=email, message=message, name=name)
         send_mail(
             f'{message}',
 
